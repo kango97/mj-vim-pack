@@ -22,5 +22,6 @@ sudo apt-get update
 sudo apt-get install gnome-terminal
 sudo add-apt-repository -r ppa:gnome3-team/gnome3-staging</code></pre>
 
-in the vim
-<pre><code>:PluginInstall</code></pre>
+The executing command of Neovim is nvim
+<pre><code>nvim
+:PluginInstall</code></pre>
