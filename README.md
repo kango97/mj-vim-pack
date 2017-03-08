@@ -1,5 +1,9 @@
 # mjVimPack
 
+This is Vim Plugin Package for the starter of vim especially for students of Hanyang University.
+
+Put below codes into your termianl.
+
 <pre><code>git clone https://github.com/hrzon/mjVimPack.git ~/.config/nvim  
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
 sudo apt-get install software-properties-common
