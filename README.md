@@ -1,6 +1,6 @@
 # mjVimPack
 
-This is Vim Plugin Package for the starter of vim especially for students of Hanyang University.
+This is the Vim Plugin Package for the starter of vim especially for students of Hanyang University.
 
 ### Vim color Setting
 
