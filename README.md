@@ -2,6 +2,8 @@
 
 This is Vim Plugin Package for the starter of vim especially for students of Hanyang University.
 
+## Vim color Setting
+
 Put below codes into your terminal.
 
 <pre><code>git clone https://github.com/hrzon/mjVimPack.git ~/.config/nvim  
@@ -27,3 +29,10 @@ The executing command of Neovim is nvim
 in the Neovim
 <pre><code>:PluginInstall
 :UpdateRemotePlugins</code></pre>
+
+## Termianl color setting
+for Ubuntu 16.04
+<pre><code>dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/nvim/termSetting/16.04_color.dconf</pre></code>
+
+for Ubuntu 14.04
+<pre><code>dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/nvim/termSetting/14.04_color.dconf</pre></code>
