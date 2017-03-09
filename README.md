@@ -2,7 +2,7 @@
 
 This is Vim Plugin Package for the starter of vim especially for students of Hanyang University.
 
-## Vim color Setting
+#### Vim color Setting
 
 Put below codes into your terminal.
 
@@ -30,7 +30,7 @@ in the Neovim
 <pre><code>:PluginInstall
 :UpdateRemotePlugins</code></pre>
 
-## Termianl color setting
+#### Termianl color setting
 for Ubuntu 16.04
 <pre><code>dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/nvim/termSetting/16.04_color.dconf</pre></code>
 
