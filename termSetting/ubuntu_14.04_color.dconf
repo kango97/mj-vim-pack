@@ -1,0 +1,14 @@
+[:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+foreground-color='#9E9EA7A7A6A6'
+visible-name='Default'
+palette=['#23232C2C3131', '#B0B02F2F3030', '#858599990100', '#C5C598972020', '#2A2954539191', '#A4A429296463', '#232279788686', '#EEEEE8E8D5D5', '#3F3F49494444', '#B6B67A7A7A7A', '#94949C9C5C5C', '#C9C9B4B47E7E', '#5C5C77779E9E', '#AAAA81819595', '#676788888D8D', '#B5B5D8D8F6F6']
+alternate-screen-scroll=true
+default-size-rows=40
+use-custom-default-size=true
+use-theme-colors=false
+use-transparent-background=false
+use-theme-transparency=false
+bold-color-same-as-fg=true
+bold-color='#000000000000'
+background-color='#23232C2C3131'
+background-transparency-percent=9
