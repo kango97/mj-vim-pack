@@ -43,3 +43,4 @@ for Ubuntu 16.04
 
 for Ubuntu 14.04
 <pre><code>dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/nvim/termSetting/14.04_color.dconf</pre></code>
+
