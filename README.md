@@ -31,6 +31,9 @@ in the Neovim
 :UpdateRemotePlugins</code></pre>
 
 ### Termianl color setting
+<pre><code>rm ~/.bashrc
+ln ~/.config/nvim/termSetting/.bashrc ~/.bashrc</pre></code>
+
 for Ubuntu 16.04
 <pre><code>dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/nvim/termSetting/16.04_color.dconf</pre></code>
 
