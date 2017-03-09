@@ -30,13 +30,14 @@ in the Neovim
 <pre><code>:PluginInstall
 :UpdateRemotePlugins</code></pre>
 
-### Termianl color setting
+### .bashrc setting
 <pre><code>rm ~/.bashrc
 ln ~/.config/nvim/termSetting/.bashrc ~/.bashrc</pre></code>
 
-After restarting terminal, you can run neovim through 'v' instead of 'nvim'
+After restarting terminal, you can run the neovim through 'v' instead of 'nvim'
 <pre><code>v</code></pre>
 
+### Terminal color setting
 for Ubuntu 16.04
 <pre><code>dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/nvim/termSetting/16.04_color.dconf</pre></code>
 
