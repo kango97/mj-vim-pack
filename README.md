@@ -17,7 +17,7 @@ pip3 install --user neovim
 sudo apt-get install neovim
 sudo apt-get install clang</code></pre>
 
-(below is for Ubuntu 14.04 for updating terminal)
+(below is for Ubuntu 14.04 for updating the terminal)
 
 <pre><code>sudo add-apt-repository ppa:gnome3-team/gnome3-staging
 sudo apt-get update
