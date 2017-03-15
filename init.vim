@@ -1,7 +1,7 @@
 " ****************************************************
 "             Command list of mjVimPack
 "
-" ** Normal Mode **
+" ****** Normal Mode ******
 " hjkl  : Left Down Up Right
 " i     : enter insert mode in front of the cursor.
 " I     : enter insert mode in front of the line.
@@ -17,47 +17,54 @@
 " dd    : delete an entire line.
 " yy    : yank. Copy an entire line.
 " u     : undo.
-" Ctrl+r: redo.
-" Ctrl+d: down. Cursor down.
-" Ctrl+u: up. Cursor up.
-" Ctrl+f: front. Cursor down more than Ctrl+d.
-" Ctrl+b: back. Cursor up more than Ctrl+u.
+" <Ctrl>r : redo.
+" <Ctrl>d : down. Cursor down.
+" <Ctrl>u : up. Cursor up.
+" <Ctrl>f : front. Cursor down more than <Ctrl>d.
+" <Ctrl>b : back. Cursor up more than <Ctrl>u.
 " gg    : Move the cursor to the first line.
 " G     : Move the curosr to the last line.
 " <n>G  : Move the cursor to the <n> line. e.g.) '100G' moves the cursor to the 100nd line.
 " /<str>: Find <str>. e.g.) '/abcd' finds 'abcd' in the file.
 " $     : Move the cursor to the end of the line.
 " ^     : Move the cursor to the end of the line.
+" <Ctrl>ww : traverse windows.
+" <Ctrl>wh : move to the left window.
+" <Ctrl>wj : move to the below window.
+" <Ctrl>wk : move to the above window.
+" <Ctrl>wl : move to the right window.
 "
-" ** Insert Mode **
+" ****** Insert Mode ******
 " <tab> : Automatically completing the code. e.g.) main<tab>, for<tab>
 "         while<tab>, etc...
 "         This is provided by UltiSnips the plugin.
 "         You can see the snippets at below location.
 "         '~/.vim/bundle/vim-snippets/snippets/c.snippets'
 "
-" ** Command Mode **
+" ****** Command Mode ******
 " :q    : quit the vim.
 " :w    : save the opened file.
 " :wq   : save the opened file and quit.
 " :e <fileName> : open 'filename'. If it is not exists, vim makes a new file.
 " :!<terminalCommand> : You can use termianl with !. e.g.):!ls         
+" :sp   : split the window with horizontal side.
+" :vs   : split the window with vertical side.
+" :%s/oldStr/newStr/g   : change all oldStr to newStr e.g.) :%s/joeun/mjae/g
 "
 " ** Plugin Command **
-" TODO
-" 
+" <F2>  : paste mode toggle. Indentation is disabled.
+" <F4>  : Goyo toggle. You can use distract-free mode.
+" <F5>  : colorscheme is changed to Solarized. If you would like to back, restart the vim.
+" <leader>ne : NERDTree toggle. <ledaer> is ','. e.g.),ne
+" <leader>c<space> : NERDCommenter toggle. Comment made.
+" <ledaer>cs       : NERDCommenter. Sexy comment.
 "
-"
-"
-"
-"
-"
-"
-"
-"
-"
-"
-"
+" <Ctrl>n : multiple cursor. Select next
+" <Ctrl>p : multiple cursor. Go to previous one.
+" <Ctrl>x : multiple cursor. Skip this one.
+"           When multiple cursors are selected, push 'xi' if you want to replace the text, 
+"           or push 'I' to insert texts in front of the cursor,
+"           or Push 'A' to attach texts at back of the cursor.
 "
 " ****************************************************
 
@@ -118,8 +125,8 @@ set termguicolors
 set guioptions-=r
 set scrolloff=5
 set background=dark
-" colorscheme CodeSchool3
-colorscheme solarized
+colorscheme CodeSchool3
+" colorscheme solarized
 autocmd FileType make setlocal noexpandtab
 
 let mapleader = ","
@@ -128,6 +135,12 @@ nnoremap <leader>w :bn<CR>
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 nnoremap <F4> :Goyo <CR>
+
+function ChangeColorToSolarizedDark()
+   colo solarized
+   set background=dark
+endfunction
+nnoremap <F5> :call ChangeColorToSolarizedDark() <CR>
 
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>_ :exe "resize " . (winheight(0) * 2/3)<CR>
@@ -235,3 +248,4 @@ endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " Goyo End
+
