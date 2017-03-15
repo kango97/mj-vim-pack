@@ -26,8 +26,25 @@
 " G     : Move the curosr to the last line.
 " <n>G  : Move the cursor to the <n> line. e.g.) '100G' moves the cursor to the 100nd line.
 " /<str>: Find <str>. e.g.) '/abcd' finds 'abcd' in the file.
+" $     : Move the cursor to the end of the line.
+" ^     : Move the cursor to the end of the line.
 "
+" ** Insert Mode **
+" <tab> : Automatically completing the code. e.g.) main<tab>, for<tab>
+"         while<tab>, etc...
+"         This is provided by UltiSnips the plugin.
+"         You can see the snippets at below location.
+"         '~/.vim/bundle/vim-snippets/snippets/c.snippets'
 "
+" ** Command Mode **
+" :q    : quit the vim.
+" :w    : save the opened file.
+" :wq   : save the opened file and quit.
+" :e <fileName> : open 'filename'. If it is not exists, vim makes a new file.
+" :!<terminalCommand> : You can use termianl with !. e.g.):!ls         
+"
+" ** Plugin Command **
+" TODO
 " 
 "
 "
