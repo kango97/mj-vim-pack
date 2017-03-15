@@ -117,7 +117,9 @@ set sw=4
 set termguicolors
 set guioptions-=r
 set scrolloff=5
-colorscheme CodeSchool3
+set background=dark
+" colorscheme CodeSchool3
+colorscheme solarized
 autocmd FileType make setlocal noexpandtab
 
 let mapleader = ","
