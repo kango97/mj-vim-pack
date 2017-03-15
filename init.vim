@@ -1,6 +1,37 @@
 " ****************************************************
 "             Command list of mjVimPack
-" TODO
+"
+" ** Normal Mode **
+" hjkl  : Left Down Up Right
+" i     : enter insert mode in front of the cursor.
+" I     : enter insert mode in front of the line.
+" a     : enter insert mode at back of the cursor.
+" A     : enter insert mode at back of the line.
+" o     : enter insert mode with new line below.
+" O     : enter insert mode with new line above.
+" x     : delete one character at the cursor.
+" X     : delete one character in front rf the cursor.
+" w     : move the cursor to the head of a next word.
+" e     : move the cursor to the tail of a next word.
+" d     : delete. It is used with other command. e.g.)'d5w' is deleting five words. 
+" dd    : delete an entire line.
+" yy    : yank. Copy an entire line.
+" u     : undo.
+" Ctrl+r: redo.
+" Ctrl+d: down. Cursor down.
+" Ctrl+u: up. Cursor up.
+" Ctrl+f: front. Cursor down more than Ctrl+d.
+" Ctrl+b: back. Cursor up more than Ctrl+u.
+" gg    : Move the cursor to the first line.
+" G     : Move the curosr to the last line.
+" <n>G  : Move the cursor to the <n> line. e.g.) '100G' moves the cursor to the 100nd line.
+" /<str>: Find <str>. e.g.) '/abcd' finds 'abcd' in the file.
+"
+"
+" 
+"
+"
+"
 "
 "
 "
@@ -68,6 +99,7 @@ set et
 set sw=4
 set termguicolors
 set guioptions-=r
+set scrolloff=5
 colorscheme CodeSchool3
 autocmd FileType make setlocal noexpandtab
 
