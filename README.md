@@ -41,7 +41,7 @@ sudo apt-get install clang
 sudo add-apt-repository ppa:gnome3-team/gnome3-staging
 sudo apt-get update
 sudo apt-get install gnome-terminal
-sudo add-apt-repository -r ppa:gnome3-team/gnome3-staging</code></pre>
+sudo add-apt-repository -r ppa:gnome3-team/gnome3-staging
 dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/nvim/termSetting/14.04_color.dconf
 nvim</pre></code>
 
