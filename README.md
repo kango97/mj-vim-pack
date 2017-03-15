@@ -17,9 +17,9 @@ pip install --upgrade pip
 pip2 install --user neovim
 pip3 install --user neovim
 sudo apt-get install neovim
-sudo apt-get install clang</code></pre>
+sudo apt-get install clang
 nvim
-<pre><code>dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/nvim/termSetting/16.04_color.dconf</pre></code>
+dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/nvim/termSetting/16.04_color.dconf</pre></code>
 
 in the Neovim
 <pre><code>:PluginInstall
@@ -42,8 +42,9 @@ sudo add-apt-repository ppa:gnome3-team/gnome3-staging
 sudo apt-get update
 sudo apt-get install gnome-terminal
 sudo add-apt-repository -r ppa:gnome3-team/gnome3-staging</code></pre>
-dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/nvim/termSetting/14.04_color.dconf</pre></code>
-nvim
+dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/nvim/termSetting/14.04_color.dconf
+nvim</pre></code>
+
 in the Neovim
 <pre><code>:PluginInstall
 :UpdateRemotePlugins</code></pre>
