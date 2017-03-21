@@ -20,7 +20,7 @@ sudo apt-get install neovim
 sudo apt-get install clang
 nvim
 dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/nvim/termSetting/16.04_color.dconf
-cd /usr/lib/x86_64-unknown-linux
+cd /usr/lib/x86_64-linux-gnu
 ln -s libclang-3.8.so.1 libclang.so
 </pre></code>
 
