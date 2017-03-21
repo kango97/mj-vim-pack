@@ -154,7 +154,7 @@ nnoremap <silent> <Leader>[ :exe "vertical resize -8"<CR>
 
 "" The-NERD-Tree
 autocmd BufEnter * lcd %:p:h
-" autocmd VimEnter * if !argc() | NERDTree | endif
+autocmd VimEnter * if !argc() | NERDTree | endif
 nmap <leader>ne :NERDTreeToggle<cr>
 
 let NERDTreeShowLineNumbers=1
