@@ -193,8 +193,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -pedantic"
-let g:syntastic_c_compiler_options = "-Wall -pedantic"
+let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
+let g:syntastic_c_compiler_options = "-std=c11 -Wall -Wpedantic"
 
 "" clang_complete
 let g:clang_library_path='/usr/lib/x86_64-linux-gnu'
