@@ -1,0 +1,59 @@
+snippet np
+	nullptr${0}
+snippet uns
+	using namespace std;
+snippet un
+	using namespace ${0};
+# TopCoder.com
+snippet all
+	${1:container}.begin(), $1.end()
+snippet sz
+	int(${1:container}.size())
+snippet pb
+	push_back(${1})
+snippet tr
+	for(auto ${2:i} = ${1:container}.begin(); $2 != $1.end(); $2++) {
+		${3}
+	}
+snippet rtr
+	for(auto ${2:i} = ${1:container}.rbegin(); $2 != $1.rend(); $2++) {
+		${3}
+	}
+snippet present
+	(${1:container}.find(${2:x}) != $1.end())
+snippet cpresent
+	(find(${1:container}.begin, $1.end, ${2:x}) != $1.end())
+snippet vi
+	vector<int> 
+snippet vii
+	vector< vector<int> > 
+snippet ii
+	pair<int,int> 
+#local include
+snippet linc
+	#include "${1:mjUtil.h}"
+#running time
+snippet rt
+	auto startTime = system_clock::now();
+
+	/* Code */
+	
+	auto endTime = system_clock::now();
+	std::cout << "Calculating Time: " << duration<double, std::milli>(endTime - startTime).count() / 1000.0 << std::endl;
+snippet init
+	#include <iostream>
+	#include <cstdio>
+	#include <cstdint>
+	using namespace std;
+
+	int main(int argc, const char* argv[])
+	{
+		int testcase = 0;
+		cin >> testcase;
+
+		for (int i = 0; i < testcase; i++) {
+			${0}
+		}
+
+		return 0;
+	}
