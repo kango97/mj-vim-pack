@@ -95,6 +95,7 @@ Plugin 'Shougo/deoplete.nvim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'junegunn/goyo.vim'
+Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -128,6 +129,7 @@ set background=dark
 colorscheme CodeSchool3
 " colorscheme solarized
 autocmd FileType make setlocal noexpandtab
+autocmd FileType go setlocal noexpandtab
 
 let mapleader = ","
 nnoremap <leader>q :bp<CR>
