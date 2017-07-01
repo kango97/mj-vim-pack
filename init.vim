@@ -118,12 +118,12 @@ set number
 set relativenumber
 set hlsearch
 set ignorecase
-set ts=4
+set ts=2
 set et
-set sw=4
+set sw=2
 set termguicolors
 set guioptions-=r
-set scrolloff=5
+set scrolloff=999
 set background=dark
 colorscheme CodeSchool3
 " colorscheme solarized
@@ -241,7 +241,7 @@ endfunction
 function! s:goyo_leave()
   set showmode
   set showcmd
-  set scrolloff=5
+  set scrolloff=999
   " ...
 endfunction
 
