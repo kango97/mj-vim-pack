@@ -19,10 +19,10 @@ pip3 install --user neovim
 sudo apt-get install neovim
 sudo apt-get install clang
 nvim
-dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/nvim/termSetting/16.04_color.dconf
+dconf load /org/gnome/terminal/legacy/profiles:/ &lt; ~/.config/nvim/termSetting/16.04_color.dconf
 cd /usr/lib/x86_64-linux-gnu
 sudo ln -s libclang-3.8.so.1 libclang.so
-</pre></code>
+</code></pre>
 
 in the Neovim
 <pre><code>:PluginInstall
@@ -34,12 +34,12 @@ in the Neovim
 sudo apt-get update
 sudo apt-get install gnome-terminal
 sudo add-apt-repository -r ppa:gnome3-team/gnome3-staging
-dconf load /org/gnome/terminal/legacy/profiles:/ < ~/.config/nvim/termSetting/14.04_color.dconf
+dconf load /org/gnome/terminal/legacy/profiles:/ &lt; ~/.config/nvim/termSetting/14.04_color.dconf
 nvim</code></pre>
 
 ### .bashrc setting
 <pre><code>rm ~/.bashrc
-ln ~/.config/nvim/termSetting/.bashrc ~/.bashrc</pre></code>
+ln ~/.config/nvim/termSetting/.bashrc ~/.bashrc</code></pre>
 
 After restarting terminal, you can run the neovim through 'v' instead of 'nvim'
 <pre><code>v</code></pre>
