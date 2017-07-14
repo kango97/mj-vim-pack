@@ -28,6 +28,13 @@ in the Neovim
 <pre><code>:PluginInstall
 :UpdateRemotePlugins</code></pre>
 
+### .bashrc setting
+<pre><code>rm ~/.bashrc
+ln ~/.config/nvim/termSetting/.bashrc ~/.bashrc</code></pre>
+
+After restarting terminal, you can run the neovim through 'v' instead of 'nvim'
+<pre><code>v</code></pre>
+
 #### You do not need to execute below statements if you are using ubuntu 16.04 or later
 
 (below is for Ubuntu 14.04)
@@ -38,10 +45,3 @@ sudo apt-get install gnome-terminal
 sudo add-apt-repository -r ppa:gnome3-team/gnome3-staging
 dconf load /org/gnome/terminal/legacy/profiles:/ &lt; ~/.config/nvim/termSetting/14.04_color.dconf
 nvim</code></pre>
-
-### .bashrc setting
-<pre><code>rm ~/.bashrc
-ln ~/.config/nvim/termSetting/.bashrc ~/.bashrc</code></pre>
-
-After restarting terminal, you can run the neovim through 'v' instead of 'nvim'
-<pre><code>v</code></pre>
