@@ -49,7 +49,7 @@
 " :!<terminalCommand> : You can use termianl with !. e.g.):!ls         
 " :sp   : split the window with horizontal side.
 " :vs   : split the window with vertical side.
-" :%s/oldStr/newStr/g   : change all oldStr to newStr e.g.) :%s/joeun/mjae/g
+" :%s/oldStr/newStr/g   : change all oldStr to newStr
 "
 " ** Plugin Command **
 " <F2>  : paste mode toggle. Indentation is disabled.
@@ -66,9 +66,14 @@
 "           or push 'I' to insert texts in front of the cursor,
 "           or Push 'A' to attach texts at back of the cursor.
 "
+" <leader> gi : Golang. Show the short information of a word at the cursor
+" <leader> gd : Golang. Show the definition of a word at the cursor
+" <leader> gr : Golang. Run the current file.
+" <leader> gb : Golang. Build the current file.
+" <ledaer> gt : Golang. Test the current file
+" <leader> gm : Golang. Run goimports to auto-complete 'imports'
+"
 " ****************************************************
-
-
 
 " Vundle Setting
 set nocompatible              " be iMproved, required
@@ -92,6 +97,7 @@ Plugin 'Rip-Rip/clang_complete'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'Shougo/deoplete.nvim'
+Plugin 'zchee/deoplete-go'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'junegunn/goyo.vim'
@@ -208,7 +214,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsEditSplit="vertical"
 
-"" Use deoplete.
+" Use deoplete.
 let g:deoplete#enable_at_startup = 1
 
 "" NERD_commenter
@@ -254,6 +260,7 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 "" delimitMate
 let delimitMate_expand_cr=1
 
+" cscope
 if has("cscope")
 	set cscopetag
 	set csto=0
@@ -291,3 +298,12 @@ if has("cscope")
 	nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 	nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 endif
+
+" Go commands
+au FileType go nmap <Leader>gi <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gr <Plug>(go-run)
+au FileType go nmap <Leader>gb <Plug>(go-build)
+au FileType go nmap <Leader>gt <Plug>(go-test)
+au FileType go nmap gd <Plug>(go-def-tab)
+au FileType go nmap <leader>gm :GoImports<CR>

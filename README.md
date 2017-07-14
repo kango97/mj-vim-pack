@@ -28,6 +28,8 @@ in the Neovim
 <pre><code>:PluginInstall
 :UpdateRemotePlugins</code></pre>
 
+#### You do not need to execute below statements if you are using ubuntu 16.04 or later
+
 (below is for Ubuntu 14.04)
 
 <pre><code>sudo add-apt-repository ppa:gnome3-team/gnome3-staging
