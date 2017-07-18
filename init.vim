@@ -304,6 +304,6 @@ au FileType go nmap <Leader>gi <Plug>(go-info)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>gr <Plug>(go-run)
 au FileType go nmap <Leader>gb <Plug>(go-build)
-au FileType go nmap <Leader>gt <Plug>(go-test)
+au FileType go nmap <Leader>gt :w<CR><Plug>(go-test)
 au FileType go nmap gd <Plug>(go-def-tab)
 au FileType go nmap <leader>gm :GoImports<CR>
