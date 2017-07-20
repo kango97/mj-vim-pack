@@ -75,34 +75,71 @@
 "
 " ****************************************************
 
-" Vundle Setting
+" Basic Settings
+colorscheme CodeSchool3
+set termguicolors
+syntax on
+set number
+set relativenumber
+set hlsearch
+set ignorecase
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set scrolloff=999
+autocmd FileType make setlocal noexpandtab
+autocmd FileType go setlocal noexpandtab
+
+" Key Settings
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+let mapleader = ","
+nnoremap <leader>q :bp<CR>
+nnoremap <leader>w :bn<CR>
+
+" Key Setting - resize windows
+nnoremap <silent> <Leader>= :exe "resize +3"<CR>
+nnoremap <silent> <Leader>- :exe "resize -3"<CR>
+nnoremap <silent> <Leader>] :exe "vertical resize +8"<CR>
+nnoremap <silent> <Leader>[ :exe "vertical resize -8"<CR>
+
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>_ :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <Leader>} :exe "vertical resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>{ :exe "vertical resize " . (winheight(0) * 2/3)<CR>
+
+" Vundle
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
+ 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
-
+ 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'The-NERD-Tree'
+ 
+" Keep Plugin commands between vundle#begin/end.
+ 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'terryma/vim-smooth-scroll'
+Plugin 'The-NERD-Tree'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'Syntastic'
-Plugin 'Rip-Rip/clang_complete'
+Plugin 'terryma/vim-smooth-scroll'
+Plugin 'Raimondi/delimitMate'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'Syntastic'
 Plugin 'Shougo/deoplete.nvim'
-Plugin 'zchee/deoplete-go'
-Plugin 'Raimondi/delimitMate'
+Plugin 'Rip-Rip/clang_complete'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'junegunn/goyo.vim'
 Plugin 'fatih/vim-go'
-
+Plugin 'zchee/deoplete-go'
+ 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -118,72 +155,19 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" for vim-airline
+let g:airline#extensions#tabline#enabled = 1 " turn on buffer list
+let g:airline_theme='hybrid'
+set laststatus=2 " turn on bottom bar
 
-"" Basic Settings
-syntax on
-set number
-set relativenumber
-set hlsearch
-set ignorecase
-set ts=2
-set et
-set sw=2
-set termguicolors
-set guioptions-=r
-set scrolloff=999
-set background=dark
-colorscheme CodeSchool3
-" colorscheme solarized
-autocmd FileType make setlocal noexpandtab
-autocmd FileType go setlocal noexpandtab
-
-let mapleader = ","
-nnoremap <leader>q :bp<CR>
-nnoremap <leader>w :bn<CR>
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
-nnoremap <F4> :Goyo <CR>
-
-function ChangeColorToSolarizedDark()
-   colo solarized
-   set background=dark
-endfunction
-nnoremap <F5> :call ChangeColorToSolarizedDark() <CR>
-
-nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <Leader>_ :exe "resize " . (winheight(0) * 2/3)<CR>
-nnoremap <silent> <Leader>} :exe "vertical resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <Leader>{ :exe "vertical resize " . (winheight(0) * 2/3)<CR>
-
-nnoremap <silent> <Leader>= :exe "resize +3"<CR>
-nnoremap <silent> <Leader>- :exe "resize -3"<CR>
-nnoremap <silent> <Leader>] :exe "vertical resize +8"<CR>
-nnoremap <silent> <Leader>[ :exe "vertical resize -8"<CR>
-
-"" The-NERD-Tree
+" The-NERD-Tree
 autocmd BufEnter * lcd %:p:h
 autocmd VimEnter * if !argc() | NERDTree | endif
 nmap <leader>ne :NERDTreeToggle<cr>
-
 let NERDTreeShowLineNumbers=1
 let g:NERDTreeWinPos = "right"
 
-"" vim-airline
-" Turning on buffer list
-let g:airline#extensions#tabline#enabled = 1 
-" do not show a directory of the file which is opened in the buffer
-" let g:airline#extensions#tabline#fnamemod = ':t'
-
-autocmd VimEnter * AirlineTheme hybrid
-set laststatus=2
-
-"" vim-smooth-scroll
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 5)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 5)<CR>
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 3)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 3)<CR>
-
-"" vim-multiple-cursor
+" vim-multiple-cursor
 let g:multi_cursor_use_default_mapping=0
 " Default mapping
 let g:multi_cursor_next_key='<C-n>'
@@ -191,7 +175,22 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-"" Syntastic
+" vim-smooth-scroll
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 5)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 5)<CR>
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 3)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 3)<CR>
+
+" delimitMate
+let delimitMate_expand_cr=1
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
+
+" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -200,24 +199,18 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
 let g:syntastic_c_compiler_options = "-std=c11 -Wall -Wextra -Wpedantic"
 
-"" clang_complete
-let g:clang_library_path='/usr/lib/x86_64-linux-gnu'
-set completeopt-=preview
-
-"" UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsEditSplit="vertical"
-
-" Use deoplete.
+" Deoplete.
 let g:deoplete#enable_at_startup = 1
 
-"" NERD_commenter
+" clang_complete
+set completeopt-=preview
+
+" NERD Commenter
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
@@ -236,7 +229,8 @@ let g:NERDTrimTrailingWhitespace = 1
 map <Leader>cc <plug>NERDComToggleComment
 map <Leader>c<space> <plug>NERDComComment
 
-"" Goyo
+" Goyo
+nnoremap <F4> :Goyo <CR>
 function! s:goyo_enter()
   set noshowmode
   set noshowcmd
@@ -255,10 +249,15 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
-" Goyo End
 
-"" delimitMate
-let delimitMate_expand_cr=1
+" Go commands
+au FileType go nmap <Leader>gi <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gr <Plug>(go-run)
+au FileType go nmap <Leader>gb <Plug>(go-build)
+au FileType go nmap <Leader>gt :w<CR><Plug>(go-test)
+au FileType go nmap gd <Plug>(go-def-tab)
+au FileType go nmap <leader>gm :GoImports<CR>
 
 " cscope
 if has("cscope")
@@ -296,14 +295,12 @@ if has("cscope")
 	nmap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
 	nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
 	nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-	nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
+  nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 endif
 
-" Go commands
-au FileType go nmap <Leader>gi <Plug>(go-info)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gr <Plug>(go-run)
-au FileType go nmap <Leader>gb <Plug>(go-build)
-au FileType go nmap <Leader>gt :w<CR><Plug>(go-test)
-au FileType go nmap gd <Plug>(go-def-tab)
-au FileType go nmap <leader>gm :GoImports<CR>
+" Theme change
+function ChangeColorToSolarizedDark()
+   colo solarized
+   set background=dark
+endfunction
+nnoremap <F5> :call ChangeColorToSolarizedDark() <CR>
