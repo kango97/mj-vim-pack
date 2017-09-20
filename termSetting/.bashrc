@@ -169,4 +169,5 @@ function cd {
 
 export LC_ALL="en_US.UTF-8"
 alias g11='g++ -std=c++11'
+alias g11='clang++ -std=c++11 -O2 -Wno-unused-result'
 
