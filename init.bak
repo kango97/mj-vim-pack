@@ -114,7 +114,7 @@ let g:airline_theme='hybrid'
 set laststatus=2 " turn on bottom bar
 
 " The-NERD-Tree
-" autocmd BufEnter * lcd %:p:h
+autocmd BufEnter * lcd %:p:h
 autocmd VimEnter * if !argc() | NERDTree | endif
 nmap <leader>ne :NERDTreeToggle<cr>
 let NERDTreeShowLineNumbers=1
@@ -147,8 +147,6 @@ let g:UltiSnipsEditSplit="vertical"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-nmap <leader>st :SyntasticToggleMode<cr>
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
