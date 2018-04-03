@@ -163,6 +163,8 @@ let g:syntastic_cpp_compiler_options = "-std=c++11 -O2 -Wno-unused-result"
 
 let g:syntastic_c_compiler_options = "-std=c11 -Wall -Wextra -Wpedantic"
 
+let g:syntastic_python_python_exec = '/usr/bin/python3' " using python3
+
 " Deoplete.
 let g:deoplete#enable_at_startup = 1
 
@@ -263,3 +265,5 @@ function ChangeColorToSolarizedDark()
    set background=dark
 endfunction
 nnoremap <F5> :call ChangeColorToSolarizedDark() <CR>
+
+
