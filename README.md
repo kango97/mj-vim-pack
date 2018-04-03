@@ -29,7 +29,7 @@ in the Neovim
 :UpdateRemotePlugins</code></pre>
 
 ### .bashrc setting
-<pre><code>cat ~/.config/nvim/termSetting/.bashrc >> ./bashrc</code></pre>
+<pre><code>cat ~/.config/nvim/termSetting/.bashrc >> ./.bashrc</code></pre>
 
 After restarting terminal, you can run the neovim through 'v' instead of 'nvim'
 <pre><code>v</code></pre>
