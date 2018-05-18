@@ -8,7 +8,7 @@ Put below codes into your terminal.
 Ubuntu 16.04
 
 <pre><code>git clone https://github.com/hrzon/mjVimPack.git ~/.config/nvim  
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim 
 sudo apt-get install software-properties-common
 sudo apt-get install python-dev python-pip python3-dev python3-pip
 sudo add-apt-repository ppa:neovim-ppa/unstable
