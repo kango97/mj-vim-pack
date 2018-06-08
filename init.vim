@@ -6,7 +6,7 @@
 " i     : enter insert mode in front of the cursor.
 " I     : enter insert mode in front of the line.
 " a     : enter insert mode at back of the cursor.
-" <F5>  : colorscheme is changed to Solarized. If you would like to back, restart the vim.
+" <F5>  : Number toggle.
 " <leader>ne : NERDTree toggle. <ledaer> is ','. e.g.),ne
 " <leader>c<space> : NERDCommenter toggle. Comment made.
 " <ledaer>cs       : NERDCommenter. Sexy comment.
@@ -155,11 +155,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" let g:syntastic_cpp_compiler = 'g++'
-" let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
 
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = "-std=c++11 -O2 -Wno-unused-result"
+" let g:syntastic_cpp_compiler = 'clang++'
+" let g:syntastic_cpp_compiler_options = "-std=c++11 -O2 -Wno-unused-result"
 
 let g:syntastic_c_compiler_options = "-std=c11 -Wall -Wextra -Wpedantic"
 
@@ -259,11 +259,17 @@ if has("cscope")
   nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 endif
 
-" Theme change
-function ChangeColorToSolarizedDark()
-   colo solarized
-   set background=dark
+" Number toggle
+let n_is_on = 1
+function ToggleNumber()
+  if g:n_is_on == 1
+    set nornu
+    set nonu
+    let g:n_is_on = 0
+  else
+    set nu
+    set rnu
+    let g:n_is_on = 1
+  endif
 endfunction
-nnoremap <F5> :call ChangeColorToSolarizedDark() <CR>
-
-
+nnoremap <silent> <F5> :call ToggleNumber() <CR>
