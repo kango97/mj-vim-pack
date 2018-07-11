@@ -31,6 +31,7 @@
 colorscheme CodeSchool3
 set termguicolors
 syntax on
+set autoindent
 set number
 set relativenumber
 set hlsearch
@@ -170,6 +171,12 @@ let g:deoplete#enable_at_startup = 1
 
 " clang_complete
 set completeopt-=preview
+
+" for additional include path, generate '.clang_complete' file
+" whose contents is:
+" -Ipath/to/include
+"
+"  e.g.) -I./include
 
 " NERD Commenter
 " Add spaces after comment delimiters by default
