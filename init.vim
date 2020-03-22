@@ -95,7 +95,8 @@ Plugin 'fatih/vim-go'
 Plugin 'zchee/deoplete-go'
 Plugin 'gabrielelana/vim-markdown'
 Plugin 'godlygeek/tabular'
-Plugin 'posva/vim-vue'
+Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
  
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -122,7 +123,7 @@ set laststatus=2 " turn on bottom bar
 autocmd VimEnter * if !argc() | NERDTree | endif
 nmap <leader>ne :NERDTreeToggle<cr>
 let NERDTreeShowLineNumbers=1
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = "left"
 
 " vim-multiple-cursor
 let g:multi_cursor_use_default_mapping=0
@@ -306,5 +307,11 @@ if exists(":Tabularize")
   vmap <Leader>t: :Tabularize /:\zs<CR>
 endif
 
-
 let g:markdown_enable_spell_checking = 0
+
+" For mac. Yank to clipboard.
+set clipboard=unnamed
+
+" rust
+let g:syntastic_rust_checkers = ['rustc']
+let g:rustfmt_autosave = 1
