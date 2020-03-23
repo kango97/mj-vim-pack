@@ -51,6 +51,7 @@ set pastetoggle=<F2>
 let mapleader = ","
 nnoremap <leader>q :bp<CR>
 nnoremap <leader>w :bn<CR>
+nnoremap <silent> <leader>d :NERDTreeClose<bar>:%bd\|e#<bar>:NERDTree<bar>:NERDTreeClose<cr>
 
 " Key Setting - resize windows
 nnoremap <silent> <Leader>= :exe "resize +3"<CR>
@@ -97,6 +98,7 @@ Plugin 'gabrielelana/vim-markdown'
 Plugin 'godlygeek/tabular'
 Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer'
+Plugin 'majutsushi/tagbar'
  
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -121,7 +123,8 @@ set laststatus=2 " turn on bottom bar
 " The-NERD-Tree
 " autocmd BufEnter * lcd %:p:h
 autocmd VimEnter * if !argc() | NERDTree | endif
-nmap <leader>ne :NERDTreeToggle<cr>
+nnoremap <silent> <expr> <leader>ne g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
+
 let NERDTreeShowLineNumbers=1
 let g:NERDTreeWinPos = "left"
 
@@ -315,3 +318,17 @@ set clipboard=unnamed
 " rust
 let g:syntastic_rust_checkers = ['rustc']
 let g:rustfmt_autosave = 1
+
+augroup Racer
+    autocmd!
+    autocmd FileType rust nmap <buffer> gd         <Plug>(rust-def)
+    autocmd FileType rust nmap <buffer> gs         <Plug>(rust-def-split)
+    autocmd FileType rust nmap <buffer> gx         <Plug>(rust-def-vertical)
+    autocmd FileType rust nmap <buffer> gt         <Plug>(rust-def-tab)
+    autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
+augroup END
+
+
+" Tagbar
+nmap <leader>tt :TagbarToggle<cr>
+
